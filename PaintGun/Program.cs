@@ -9,7 +9,7 @@
             while (true)
             {
                 Console.WriteLine($"{gun.GetBalls()} balls; {gun.GetBallsLoaded()} loaded");
-                if (gun.IsEmpty()) Console.WriteLine("WARNINGL You're out of ammo");
+                if (gun.IsEmpty()) Console.WriteLine("WARNING: You're out of ammo");
                 Console.WriteLine("Space to shoot, r to reload, = to add ammo, q to quit");
                 char key = Console.ReadKey().KeyChar;
                 if (key == ' ') Console.WriteLine($"Shooting returned {gun.Shoot()}");

@@ -15,7 +15,7 @@ namespace PaintGun
 
         public int GetBallsLoaded() { return ballsLoaded; }
         public bool IsEmpty() { return ballsLoaded == 0; }
-        public int GetBalls() { return balls; }
+       public int GetBalls() { return balls; }
 
         public void SetBalls(int numberOfBalls)
         {
@@ -23,6 +23,7 @@ namespace PaintGun
                 balls = numberOfBalls;
             Reload();
         }
+        
 
         public void Reload()
         {
