@@ -14,16 +14,19 @@ namespace PaintGun
         private int ballsLoaded;
 
         public int GetBallsLoaded() { return ballsLoaded; }
-        public bool IsEmpty() { return ballsLoaded == 0; }
-       public int GetBalls() { return balls; }
+        public bool IsEmpty() { return ballsLoaded == 0; }       
 
-        public void SetBalls(int numberOfBalls)
+        public int Balls
         {
-            if (numberOfBalls > 0)
-                balls = numberOfBalls;
-            Reload();
+            get { return balls; }
+            set
+            {
+                if (value > 0)
+                    balls = value;
+                Reload();
+            }
         }
-        
+
 
         public void Reload()
         {
