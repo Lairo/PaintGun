@@ -1,26 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PaintGun
+﻿namespace PaintGun
 {
-    class PaintballGun
+    class PaintBallGun
     {
-        public PaintballGun(int balls, int magazineSize, bool loaded)
-        {
-            this.balls = balls;
-            MagazineSize = magazineSize;
-            if (loaded) Reload();
-        }
-
-        public int MagazineSize { get; private set; }
-
         private int balls;
+        public int MagazineSize { get; private set; }
         public int BallsLoaded { get; private set; }
-
-        public bool IsEmpty() { return BallsLoaded == 0; }       
+        public bool IsEmpty
+        {
+            get { return false; }
+            set
+            {
+                if (BallsLoaded == 0)
+                    value = true ; 
+            }
+        }
 
         public int Balls
         {
@@ -32,8 +25,6 @@ namespace PaintGun
                 Reload();
             }
         }
-
-
         public void Reload()
         {
             if (balls > MagazineSize)
@@ -49,6 +40,13 @@ namespace PaintGun
             balls--;
             return true;
         }
+        public PaintBallGun(int balls, int magazineSize, bool loaded)
+        {
+            this.balls = balls;
+            MagazineSize = magazineSize;
+            if (loaded) Reload();
+        }
 
     }
 }
+
